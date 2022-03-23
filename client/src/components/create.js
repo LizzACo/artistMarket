@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
  
-export default function Create() {
- const [form, setForm] = useState({
+export default function Create() { 
+const [form, setForm] = useState({
    username: "",
    email: "",
-  //  position: "",
-  //  level: "",
  });
  const navigate = useNavigate();
  
- // These methods will update the state properties.
+// These methods will update the state properties.
  function updateForm(value) {
    return setForm((prev) => {
      return { ...prev, ...value };
@@ -26,19 +24,18 @@ export default function Create() {
  
    await fetch("http://localhost:5001/user/add", {
      method: "POST",
+     body: JSON.stringify(newUser),
      headers: {
        "Content-Type": "application/json",
      },
-     body: JSON.stringify(newUser),
    })
    .catch(error => {
      window.alert(error);
      return;
    });
- 
+
    setForm({ username: "", email: "" });
-  //  setForm({ name: "", position: "", level: "" });
-   navigate("/");
+   navigate("/signup");
  }
  
  // This following section will display the form that takes the input from the user.
@@ -47,7 +44,7 @@ export default function Create() {
      <h3>Add a New User</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
-         <label htmlFor="username">Name</label>
+         <label htmlFor="username">Username</label>
          <input
            type="text"
            className="form-control"

@@ -25,9 +25,9 @@ recordRoutes.route("/user").get(function (req, res) { //collection name
 });
 
 // This section will help you get a single record by id
-recordRoutes.route("/user/:id").get(function (req, res) {
+  recordRoutes.route("/user/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.id )};
+  let myquery = { "_id": ObjectId( req.params.id )};
   db_connect
       .collection("user")
       .findOne(myquery, function (err, result) {
@@ -40,10 +40,8 @@ recordRoutes.route("/user/:id").get(function (req, res) {
 recordRoutes.route("/user/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = { 
-    username: req.body.user_name,
-    email: req.body.user_email,
-    // position: req.body.person_position,
-    // level: req.body.person_level,
+    username: req.body.username,
+    email: req.body.email,
   };
   db_connect.collection("user").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -55,16 +53,11 @@ recordRoutes.route("/user/add").post(function (req, response) {
 // this section may need some edits
 recordRoutes.route("/update/:id").post(function (req, response) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.id )};
+  let myquery = { "_id": ObjectId( req.params.id )};
   let newvalues = {
     $set: {
-      username: req.body.user_name,
-      email: req.body.user_email,
-      // user_name: req.body.user_name,
-      // user_email: req.body.user_email,
-      // person_name: req.body.person_name,
-      // person_position: req.body.person_position,
-      // person_level: req.body.person_level,
+      username: req.body.username,
+      email: req.body.email,
     },
   };
   db_connect
@@ -79,7 +72,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
 // This section will help you delete a record
 recordRoutes.route("/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.id )};
+  let myquery = { "_id": ObjectId( req.params.id )};
   db_connect.collection("user").deleteOne(myquery, function (err, obj) {
     if (err) throw err;
     console.log("1 document deleted");

@@ -3,10 +3,9 @@ import { useParams, useNavigate } from "react-router";
  
 export default function Edit() {
  const [form, setForm] = useState({
-   name: "",
-   position: "",
-   level: "",
-   records: [],
+   username: "",
+   email: "",
+   user: [],
  });
  const params = useParams();
  const navigate = useNavigate();
@@ -46,22 +45,21 @@ export default function Edit() {
  
  async function onSubmit(e) {
    e.preventDefault();
-   const editedPerson = {
-     name: form.name,
-     position: form.position,
-     level: form.level,
+   const editedUser = {
+     username: form.username,
+     email: form.email,
    };
  
    // This will send a post request to update the data in the database.
    await fetch(`http://localhost:5001/update/${params.id}`, {
      method: "POST",
-     body: JSON.stringify(editedPerson),
+     body: JSON.stringify(editedUser),
      headers: {
        'Content-Type': 'application/json'
      },
    });
  
-   navigate("/");
+   navigate("/signup");
  }
  
  // This following section will display the form that takes input from the user to update the data.
@@ -70,7 +68,7 @@ export default function Edit() {
      <h3>Update Record</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
-         <label htmlFor="username"> User Name: </label>
+         <label htmlFor="username"> Username: </label>
          <input
            type="text"
            className="form-control"
