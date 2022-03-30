@@ -1,29 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React from "react";
  
 // We use Route in order to define the different routes of our application
@@ -34,6 +8,8 @@ import Navbar from "./components/navbar";
 import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
+import Home from "./components/home";
+import Artists from "./components/artist";
  
 const App = () => {
  return (
@@ -43,11 +19,12 @@ const App = () => {
        <Route exact path="/signup" element={<RecordList />} />
        <Route path="/edit/:id" element={<Edit />} />
        <Route path="/create" element={<Create />} />
+       <Route exact path="/home" element={<Home />} />
+       <Route path="/artist" element={<Artists />} />
      </Routes>
    </div>
  );
 };
  
 export default App;
-
 
