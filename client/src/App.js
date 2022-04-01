@@ -29,6 +29,7 @@ import "bootstrap/dist/css/bootstrap.css";
  
 // We use Route in order to define the different routes of our application
 import { Route, Routes } from "react-router-dom";
+
  
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
@@ -46,12 +47,12 @@ const App = () => {
 	    {/* <Homepage /> */}
    <Navbar />
      <Routes>
-	      <Route path="*"  element={<Homepage />} /> 
+	 <Route path="*"  element={<Homepage />} /> 
        <Route exact path="/signup" element={<RecordList />} />
        <Route path="/edit/:id" element={<Edit />} />
        <Route path="/create" element={<Create />} />
        <Route path="/register" element={<Signup />} />
-       <Route path="/login" element={<Signin />} />
+       <Route path="login" element={<Signin />} />
        <Route path="/home" element={<Homepage />} />
      </Routes>
    </div>

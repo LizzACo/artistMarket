@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import Cookies from 'universal-cookie';
+
 
 import '../signup.css';
 export default function Signin() {
 
     
-    
+  const cookies = new Cookies();
 
 const [form, setForm] = useState({
         email: "",
@@ -19,7 +20,7 @@ async function signupPage(e) {
         navigate("/register");
       }
 
-const [user] = useState([]);
+
 
 // These methods will update the state properties.
  function updateForm(value) {
@@ -39,8 +40,7 @@ const [user] = useState([]);
 
     console.log(loginUser);
   
-    await fetch("http://localhost:5001/loginUser", {
-  
+    await fetch("http://localhost:5001/auth/signIn", {
       method: "POST",
       body: JSON.stringify(loginUser),
       headers: {
@@ -48,17 +48,16 @@ const [user] = useState([]);
         'Accept': 'application/json'
       },
     })
-    //  .then((response) => response.json())
-    // .then((response) => {
+    .then((response) => response.json())
+    .then((response) => {
 
-    //     console.log("Array length"+response);
-    //     if(response.length > 0) {
-    //         alert("Login Success");
-    //     } else {
-    //         alert("Auth Failed");
-    //     }
+        console.log("tokens",response.data.token);
 
-    // })
+        
+        cookies.set("onboarded", true, {path: "/"}, {expires: 86400});
+        
+
+    })
     .catch(error => {
       window.alert(error);
       return;

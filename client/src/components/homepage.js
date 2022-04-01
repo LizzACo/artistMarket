@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router";
 import '../index.css';
 export default function Homepage() {
     return (
@@ -69,7 +66,7 @@ export default function Homepage() {
             </div>
         </div>
         <div id="list-item-2" className="new-arrivals">
-            <img src="true" />
+            <img src="true"  alt="list item"></img>
         </div>
         <h2 id="list-item-3" className="events-type">EVENTS</h2>
         <div className="events-wrap">

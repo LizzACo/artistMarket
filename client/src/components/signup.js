@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, {  useState } from "react";
+// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import '../signup.css';
 export default function Signup() {
@@ -27,12 +27,18 @@ const navigate = useNavigate();
 
     console.log(registerUser);
   
-    await fetch("http://localhost:5001/user/registerUser", {
+    await fetch("http://localhost:5001/auth/signUp", {
       method: "POST",
       body: JSON.stringify(registerUser),
       headers: {
         "Content-Type": "application/json",
       },
+    })
+    .then((response) => response.json())
+    .then((response) => {
+
+        console.log("",response.data.token);
+
     })
     .catch(error => {
       window.alert(error);

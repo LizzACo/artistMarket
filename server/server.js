@@ -1,56 +1,38 @@
-const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
+const mongoose = require("mongoose")
 const port = process.env.PORT || 5001;
-app.use(cors());
-app.use(express.json());
-app.use(require("./routes/user")); 
 const passport = require("passport");
-const localStrategy  = require("passport-local").Strategy;
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
-const User = require("./UserSchema");
-const recordRoutes = express.Router();
-const bodyParser = require("body-parser");
+require("./passportConfig")
 
-mongoose.connect(
-	"mongodb+srv://Kanishk:Seeker1234@cluster0.xmcpk.mongodb.net/artistMarket?retryWrites=true&w=majority",
-	{
-	  useNewUrlParser: true,
-	  useUnifiedTopology: true,
-	},
-	() => {
-	}
-  );
+//public routes
+const authRoutes = require("./routes/authenticate");
+//protected routes
+const userRoutes = require("./routes/userData");
 
-const dbo = require("./db/conn");
-app.use(
-  session({
-    secret: "secretcode",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: "http://localhost:3000", // <-- location of the react app were connecting to
-    credentials: true,
-  })
-);
-
+//middlewares
 app.use(cookieParser("secretcode"));
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(cors());
+app.use(express.json());
 
+//DB connection
+mongoose.connect(            // Using mongoose to conect no requirement of reconnecting . Mongoose is used to save data in MongoDB
+  process.env.ATLAS_URI,
+  {family:4},
+  () => {
+    console.log('Connected to MongoDB');
+  }
+);
+
+//routes
+app.use("/auth" , authRoutes)
+app.use("/user"  ,  passport.authenticate('jwt', { session: false }) ,  userRoutes)  // protect route can be used further for account specific information
+
+//start server
 app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
- 
-  });
   console.log(`Server is running on port: ${port}`);
 });
