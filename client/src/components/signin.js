@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+// import React, { useState} from "react";
+import  {useStateIfMounted} from "use-state-if-mounted"; 
 import { useNavigate } from "react-router";
-import Cookies from 'universal-cookie';
 
 
 import '../signup.css';
 export default function Signin() {
 
-    
-  const cookies = new Cookies();
-
-const [form, setForm] = useState({
+const [form, setForm] = useStateIfMounted({
         email: "",
         password:""
       });
@@ -20,8 +17,6 @@ async function signupPage(e) {
         navigate("/register");
       }
 
-
-
 // These methods will update the state properties.
  function updateForm(value) {
     return setForm((prev) => {
@@ -29,44 +24,45 @@ async function signupPage(e) {
     });
   }
 
- 
-
-
  // This function will handle the submission.
  async function onSubmit(e) {
     e.preventDefault();
     // When a post request is sent to the create url, we'll add a new record to the database.
     const loginUser = { ...form };
 
-    console.log(loginUser);
+    // console.log(loginUser);
   
     await fetch("http://localhost:5001/auth/signIn", {
       method: "POST",
-      body: JSON.stringify(loginUser),
+      withCredentials: true,
+      credentials: 'include',
       headers: {
         "Content-Type": "application/json",
-        'Accept': 'application/json'
+        'Accept': 'application/json',
       },
+      body: JSON.stringify(loginUser)
     })
     .then((response) => response.json())
     .then((response) => {
 
-        console.log("tokens",response.data.token);
-
-        
-        cookies.set("onboarded", true, {path: "/"}, {expires: 86400});
-        
+      // console.log(response , "resssssssssssssssssssssssssssssssss")
+      if (response.status === 401) {
+        // do what you need to do here
+        window.alert("invalid credential")
+      }
+        else{
+          // window.alert("invalid credential")
+          navigate("/")
+        }
 
     })
     .catch(error => {
-      window.alert(error);
+      window.alert("invalid credentials")
       return;
     });
     
     setForm({email: "",password:"" });
   }
-
-  
 
     return (
         <>

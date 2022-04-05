@@ -2,13 +2,15 @@ const express = require("express");
 const recordRoutes = express.Router();
 const signIn = require("../controller/authenticate-controller");
 const res = require("express/lib/response");
+const passport = require('passport');  // authentication
+
 
 
   recordRoutes.route("/signUp").post(function (req, response) {
       
     try{
         console.log("rutessss")
-        signIn.signUpController(req,response)           //signupController handles signup logic refer to authenticate-controller.js
+        signIn.signUpController(req,response)
     }
     catch(e)    
     {
@@ -22,10 +24,23 @@ const res = require("express/lib/response");
 
   });
 
-  recordRoutes.route("/signIn").post(function (req, response) {
+  recordRoutes.post( "/signIn" , passport.authenticate('local', { failureMessage: 'not valid' }) , function (req, res) {
       
     try{
-        signIn.signinController(req,response)       //signinController handles signup logic refer to authenticate-controller.js         
+
+        if(req.user == "succuess")
+        {
+          res.status(200).json({
+            "result": "unauthorized",
+          })
+        }
+        else{
+          res.status(200).json({
+            "result": "succuess",
+            "user": req.user
+          })
+        }
+
     }
     catch(e)    
     {
@@ -55,5 +70,6 @@ const res = require("express/lib/response");
     }
 
   });
+
 
   module.exports = recordRoutes

@@ -37,7 +37,7 @@ const navigate = useNavigate();
     .then((response) => response.json())
     .then((response) => {
 
-        console.log("",response.data.token);
+        // console.log("",response.data.token);
 
     })
     .catch(error => {

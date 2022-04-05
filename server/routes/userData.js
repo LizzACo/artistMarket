@@ -5,25 +5,10 @@ const userController = require("../controller/user-controller");
 var ObjectId = require('mongodb').ObjectID;
 
 
-recordRoutes.route("/getAlluser").get(function (req, res) {
+recordRoutes.get("/getAlluser" , function (req, res) {
     try{
         console.log("routessss")
         userController.findAllUser(req,res)
-    }
-    catch(e)
-    {
-      res.status(500).json(
-        {
-            "result": "error",
-            "message": e.message
-        }
-    )
-    }
-  });
-
-  recordRoutes.route("/demo").get(function (req, res) {
-    try{
-        console.log("routessss")
     }
     catch(e)
     {

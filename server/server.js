@@ -7,20 +7,16 @@ const port = process.env.PORT || 5001;
 const passport = require("passport");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
-require("./passportConfig")
+const bodyParser = require('body-parser');
+const UserDetails = require("./models/UserSchema")
+const strategy = require("./strategies/localStrategy")
 
-//public routes
+// // routes
 const authRoutes = require("./routes/authenticate");
-//protected routes
 const userRoutes = require("./routes/userData");
 
-//middlewares
-app.use(cookieParser("secretcode"));
-app.use(cors());
-app.use(express.json());
-
 //DB connection
-mongoose.connect(            // Using mongoose to conect no requirement of reconnecting . Mongoose is used to save data in MongoDB
+mongoose.connect(
   process.env.ATLAS_URI,
   {family:4},
   () => {
@@ -28,9 +24,22 @@ mongoose.connect(            // Using mongoose to conect no requirement of recon
   }
 );
 
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(session({
+  secret: 'r8q,+&1LM3)CD*zAGpx1xm{NeQhc;#',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60 * 60 * 1000 * 24 } // 1 hour
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 //routes
 app.use("/auth" , authRoutes)
-app.use("/user"  ,  passport.authenticate('jwt', { session: false }) ,  userRoutes)  // protect route can be used further for account specific information
+app.use("/user"  , userRoutes)
 
 //start server
 app.listen(port, () => {

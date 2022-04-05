@@ -1,15 +1,10 @@
+// import React, { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router";
 import '../index.css';
 export default function Homepage() {
     return (
         <div>
-        {/* <header>
-        <div className="logo2">VENUSTY</div>
-        <div className="login-signup-button">
-            
-            <a href={window.location.origin + "/login"} id="login-button">Login</a>
-            <a href={window.location.origin + "/register"} id="signup-button">SignUp</a>
-        </div>
-        </header> */}
         <div className="slider-menu">
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
@@ -66,7 +61,7 @@ export default function Homepage() {
             </div>
         </div>
         <div id="list-item-2" className="new-arrivals">
-            <img src="true"  alt="list item"></img>
+            <img src="true" alt='list-item' />
         </div>
         <h2 id="list-item-3" className="events-type">EVENTS</h2>
         <div className="events-wrap">
