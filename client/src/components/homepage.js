@@ -1,45 +1,83 @@
-// import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router";
-import '../index.css';
+import '../css/index.css';
+import { Carousel, Button, ListGroup} from 'react-bootstrap'
+
 export default function Homepage() {
     return (
         <div>
-        <div className="slider-menu">
-        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={1} aria-label="Slide 2" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={2} aria-label="Slide 3" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={3} aria-label="Slide 4" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={4} aria-label="Slide 5" />
-            </div>
-            <div className="carousel-inner">
-            <div className="carousel-item active">
-                <img src={window.location.origin + "/East-Village-Apartment.jpeg"} className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-                <img src={window.location.origin + "/East-Village-Apartment.jpeg"} className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-                <img src={window.location.origin + "/East-Village-Apartment.jpeg"} className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-                <img src={window.location.origin + "/East-Village-Apartment.jpeg"} className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-                <img src={window.location.origin + "/East-Village-Apartment.jpeg"} className="d-block w-100" alt="..." />
-            </div>
-            </div>
+        {/* <header>
+        <div className="logo2">VENUSTY</div>
+        <div className="login-signup-button">
+            
+            <a href={window.location.origin + "/login"} id="login-button">Login</a>
+            <a href={window.location.origin + "/register"} id="signup-button">SignUp</a>
         </div>
-        <div id="list-example" className="list-group">
+        </header> */}
+        <Carousel>
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src="East-Village-Apartment.jpeg"
+                alt="First slide"
+                />
+            </Carousel.Item>
+
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src="East-Village-Apartment.jpeg"
+                alt="Second slide"
+                />
+            </Carousel.Item>
+
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src="East-Village-Apartment.jpeg"
+                alt="Third slide"
+                />
+            </Carousel.Item>
+
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src="East-Village-Apartment.jpeg"
+                alt="Third slide"
+                />
+            </Carousel.Item>
+
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src="East-Village-Apartment.jpeg"
+                alt="Third slide"
+                />
+            </Carousel.Item>
+        </Carousel>
+
+        <ListGroup className="list-group list-example">
+            <ListGroup.Item className="list-group-item list-group-item-action opacity-75 active" action href="#list-item-1">
+                FEATURED
+            </ListGroup.Item>
+            <ListGroup.Item className="list-group-item list-group-item-action opacity-75 active" action href="#list-item-2">
+                NEW ARRIVALS
+            </ListGroup.Item>
+            <ListGroup.Item className="list-group-item list-group-item-action opacity-75 active" action href="#list-item-3">
+                EVENTS
+            </ListGroup.Item>
+            <ListGroup.Item className="list-group-item list-group-item-action opacity-75 active" action href="#list-item-4">
+                TRENDING ARTISTS
+            </ListGroup.Item>
+        </ListGroup>
+
+        {/* <div id="list-example" className="list-group">
             <a className="list-group-item list-group-item-action opacity-75" href="{}">FEATURED</a>
             <a className="list-group-item list-group-item-action opacity-75" href="{}">NEW ARRIVALS</a>
             <a className="list-group-item list-group-item-action opacity-75" href="{}">EVENTS</a>
             <a className="list-group-item list-group-item-action opacity-75 active" href="{}">TRENDING ARTISTS</a>
-        </div>
-        </div>
-        <div className="container-fluid" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset={0} tabIndex={0}>
+        </div> */}
+        
+
+        <div className="container-fluid" data-bs-spy="scroll" data-bs-target=".list-example" data-bs-offset={0} tabIndex={0}>
         <div id="list-item-1" className="featured-wrap">
             <h2>FEATURED</h2>
             <div className="drag-drop-slider" id="slider2">
@@ -61,7 +99,7 @@ export default function Homepage() {
             </div>
         </div>
         <div id="list-item-2" className="new-arrivals">
-            <img src="true" alt='list-item' />
+            <img src="true"  alt="list item"></img>
         </div>
         <h2 id="list-item-3" className="events-type">EVENTS</h2>
         <div className="events-wrap">
@@ -99,7 +137,7 @@ export default function Homepage() {
             </div>
         </div>
         <div className="trending-wrap">
-            <h2>TRENDING ARTISTS</h2>
+            <h2 id="list-item-4">TRENDING ARTISTS</h2>
             <div className="drag-drop-slider" id="slider">
             <div className="artists">
                 <div className="box" />
@@ -163,8 +201,8 @@ export default function Homepage() {
             </div>
             </div>
             <div className="bar-slider">
-            <div className="long-bar" />
-            <div className="short-bar" id="sliderBar" />
+                <div className="long-bar" />
+                <div className="short-bar" id="sliderBar" />
             </div> 
         </div>
         </div>
@@ -175,6 +213,6 @@ export default function Homepage() {
         <a href="{}">Partnership</a>
         </footer>
     </div>
-    );
+);
 
 }

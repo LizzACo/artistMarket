@@ -1,7 +1,7 @@
 import React, {  useState } from "react";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
-import '../signup.css';
+import '../css/signup.css';
 export default function Signup() {
 
 const [form, setForm] = useState({

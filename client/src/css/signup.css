@@ -73,7 +73,7 @@ input[type=text]:focus, input[type=password]:focus {
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  background-image: url("../public/line_bg.jpg");
+  background-image: url("../img/line_bg.jpg");
   background-repeat: repeat-x;
   color: gray;
   font-size: 16px;

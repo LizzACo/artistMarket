@@ -52,7 +52,7 @@ h2{
     height: 856px;
 }
 
-#list-example{
+.list-example{
     width: 170px;
     position: absolute;
     top: 120px;
@@ -60,18 +60,19 @@ h2{
     background-color: white !important;
 }
 
-#list-example a{
+.list-example a{
     font-size: 10pt;
     font-family: "roboto-bold";
     color: black; 
     
 }
-#list-example,
-#list-example .active {
+.list-example,
+.list-example .active {
     /* background-color: transparent !important; */
     background-color: white !important;
     /* color: white !important; */
     border: 0 !important;
+    color: black !important;
 
 }
 
@@ -192,14 +193,13 @@ h2{
     width: 100%;
     height: 500px;
     padding-left: 30px;
-    overflow: hidden;
     margin-top: 150px;
 }
 
 .drag-drop-slider{
     margin-top: 60px;
     display: flex;
-
+    overflow-x: scroll;
 }
 
 
