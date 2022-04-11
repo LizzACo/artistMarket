@@ -1,0 +1,67 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+
+.form-wrap{
+    width: 500px;
+    margin: 0 auto;
+    /* margin-top: 100px; */
+}
+
+h2{
+    font-size: 20pt;
+    font-family: "roboto-medium";
+    color: black;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+form{
+    display: block;
+}
+
+label{
+    font-size: 12pt;
+    font-family: "roboto-medium";
+    color: black;
+    margin-top: 20px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+  }
+
+.save-changes{
+    font-size: 12pt;
+    font-family: "roboto-regular";
+    background-color: #000;
+    color: white;
+    width: 60%;
+    padding: 14px 0;
+    cursor: pointer;
+    border-radius: 30px;
+
+    margin-top: 50px;
+}
+
+hr{
+    width: 120%;
+    margin-top: 50px;
+    border: 1px solid black;
+}
+
+.pw{
+    font-size: 12pt;
+    font-family: "roboto-regular";
+    background-color: #000;
+    color: white;
+    width: 60%;
+    padding: 14px 0;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 300px;
+}
