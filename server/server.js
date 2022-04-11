@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
 const UserDetails = require("./models/UserSchema")
 const strategy = require("./strategies/localStrategy")
+const chkAuth = require("./strategies/checkLogin")
 
 // // routes
 const authRoutes = require("./routes/authenticate");
@@ -24,10 +25,12 @@ mongoose.connect(
   }
 );
 
+//middlewares
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//cookies set
 app.use(session({
   secret: 'r8q,+&1LM3)CD*zAGpx1xm{NeQhc;#',
   resave: false,
@@ -41,7 +44,30 @@ app.use(passport.session());
 app.use("/auth" , authRoutes)
 app.use("/user"  , userRoutes)
 
+//middleware function to check if the ser is logged in or not
+function checkLogin(req,res,done)
+{
+      if(req.user)
+      {
+        done()
+      }
+      else{
+        res.status(200).json({
+          "msg": "auth faileeddddd"
+        })
+      }
+}
+
+//test for authenticated user
+app.get("/checkLoginStatus"  , checkLogin ,  (req,res)=>{
+  res.status(200).json(req.user)
+})
+
+
+
 //start server
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+
+

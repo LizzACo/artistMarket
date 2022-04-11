@@ -11,8 +11,6 @@ const ObjectId = require("mongodb").ObjectId;
 
 const User = require("../models/UserSchema")
 
-const jwtToken = require("jsonwebtoken")
-
 
 exports.findAllUser = async (req,res)=>{
 
