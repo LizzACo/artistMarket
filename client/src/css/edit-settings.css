@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+.sub-menu .edit-settings{
+    text-decoration: underline white;
+}
 
 .form-wrap{
     width: 500px;

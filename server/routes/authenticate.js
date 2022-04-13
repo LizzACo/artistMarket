@@ -52,17 +52,17 @@ const passport = require('passport');  // authentication
 
   });
 
-  recordRoutes.route("/signOut").post(function (req, response) {
-      
+  recordRoutes.route("/signOut").get(function (req, res) {
+    
     try{
-      req.session.destroy(function (err) {
-        res.status(200).json(
-            {
-                "result": "success",
-                "message": "logged out"
-            }
-        )
-      });
+        req.session.destroy(function (err) {
+            res.status(200).json(
+                {
+                    "result": "success",
+                    "message": "logged out"
+                }
+            )
+          });
     }
     catch(e)    
     {
@@ -72,7 +72,7 @@ const passport = require('passport');  // authentication
                 "message": e.message
             }
         )
-    }
+    } 
   });
 
   module.exports = recordRoutes

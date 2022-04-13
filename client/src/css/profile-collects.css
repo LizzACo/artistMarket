@@ -4,6 +4,10 @@
 
 /* Artists */
 
+.sub-menu .collects{
+    text-decoration: underline white;
+}
+
 .artist-title-top {
     font-size: 50px; 
     font-weight: 400; 

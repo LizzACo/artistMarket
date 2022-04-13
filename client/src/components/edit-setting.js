@@ -15,10 +15,10 @@ export default function Edit() {
         <title>Edit Setting</title>
         <div className="sub-menu">
           <div className="sub-menu-list">
-            <a href="/profile-collects" className="collects">Collects</a>
-            <a href="/follow" className="followed-artists">Followed Artists</a>
-            <a href="/order-history" className="order">Order History</a>
-            <a href="/edit-setting" className="edit-settings">Edit Settings</a>
+            <a href="/profile-collects">Collects</a>
+            <a href="/follow">Followed Artists</a>
+            <a href="/order-history" >Order History</a>
+            <a href="/#" className="edit-settings">Edit Settings</a>
           </div>
         </div>
         <div className="form-wrap">

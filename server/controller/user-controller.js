@@ -5,13 +5,9 @@ const LocalStrategy = require('passport-strategy');
 
 const recordRoutes = express.Router();
 
-// const dbo = require("../db/conn");
-
 const ObjectId = require("mongodb").ObjectId;
 
 const User = require("../models/UserSchema")
-
-// const jwtToken = require("jsonwebtoken")
 
 
 exports.findAllUser = async (req,res)=>{

@@ -16,10 +16,10 @@ export default function OrderHistory() {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
         <div className="sub-menu">
           <div className="sub-menu-list">
-            <a href="/profile-collects" className="collects">Collects</a>
-            <a href="/follow" className="followed-artists">Followed Artists</a>
-            <a href="/order-history" className="order">Order History</a>
-            <a href="/edit-setting" className="edit-settings">Edit Settings</a>
+            <a href="/profile-collects">Collects</a>
+            <a href="/follow">Followed Artists</a>
+            <a href="#" className="order">Order History</a>
+            <a href="/edit-setting">Edit Settings</a>
           </div>
         </div>
         <div className="container">
@@ -32,7 +32,7 @@ export default function OrderHistory() {
               <h3 className="order-number">ORDER NUMBER: #CCP000000034</h3>
               <h3 className="order-date">ORDER DATE: Mar 13th, 2022</h3>
               <div className="price">$ 3,200</div>
-              <a href="#"><button type="view" value="view" className="view-details">View Details</button></a>
+              <a href="/order-history-detail"><button type="view" value="view" className="view-details">View Details</button></a>
             </div>
           </div>
 

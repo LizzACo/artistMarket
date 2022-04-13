@@ -4,6 +4,14 @@ import { Carousel, Button, ListGroup} from 'react-bootstrap'
 export default function Homepage() {
     return (
         <div>
+            <div className="sub-menu">
+                <div className="sub-menu-list">
+                    <a href="/profile-collects">Collects</a>
+                    <a href="/follow">Followed Artists</a>
+                    <a href="/order-history" >Order History</a>
+                    <a href="/edit-setting">Edit Settings</a>
+                </div>
+            </div>
             <Carousel>
                 <Carousel.Item>
                     <img

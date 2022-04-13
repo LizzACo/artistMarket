@@ -1,3 +1,7 @@
+.sub-menu .followed-artists{
+    text-decoration: underline white;
+}
+
 .artists-wrap{
     margin-top: 100px;
     width: 100%;

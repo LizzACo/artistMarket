@@ -16,10 +16,10 @@ export default function Follow() {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
         <div className="sub-menu">
           <div className="sub-menu-list">
-            <a href="/profile-collects" className="collects">Collects</a>
-            <a href="/follow" className="followed-artists">Followed Artists</a>
-            <a href="/order-history" className="order">Order History</a>
-            <a href="/edit-setting" className="edit-settings">Edit Settings</a>
+            <a href="/profile-collects">Collects</a>
+            <a href="#" className="followed-artists">Followed Artists</a>
+            <a href="/order-history">Order History</a>
+            <a href="/edit-setting">Edit Settings</a>
           </div>
         </div>
         <div className="artists-wrap">
