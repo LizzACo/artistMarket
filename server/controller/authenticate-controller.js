@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-strategy');
 const passport = require("passport");
 const recordRoutes = express.Router();
-const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 const User = require("../models/UserSchema")
 

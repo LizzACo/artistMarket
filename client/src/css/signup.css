@@ -100,17 +100,3 @@ input[type=text]:focus, input[type=password]:focus {
   border-radius: 30px;
   margin: 10px 0px 15px 0;
   }
-
-
-
-/*@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }*/

@@ -51,15 +51,8 @@ const navigate = useNavigate();
         <>
     
     <div className="float_right">
-      {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-      </svg> */}
-    </div>
 
-    {/* <div className="container">
-    <div className="logo">VENUSTY</div>
-    <p>Sign up for the best art works in APPNAME...</p> */}
+    </div>
 
     <form onSubmit={onSubmit}>
 
@@ -148,14 +141,6 @@ const navigate = useNavigate();
         <div></div>  
     </div>
 
-    {/* <div> */}
-      {/* <button type="submit" className="btn_signup">SIGN UP</button> */}
-
-      {/* <button type="submit" className="btn_continue"><i className="bi bi-apple"></i> Continue with Apple</button> */}
-      {/* <button type="submit" className="btn_continue"><i className="bi bi-google"></i> Continue with Google</button> */}
-      {/* <button type="submit" className="btn_continue"><i className="bi bi-facebook"></i> Continue with Facebook</button> */}
-    {/* </div> */}
-    {/* </div> */}
     </>
     );
 }
