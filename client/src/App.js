@@ -16,7 +16,6 @@ import OrderHistory from "./components/order-history";
 import Signup from "./components/signup";
 import Signin from "./components/signin";
 import ProfileCollect from "./components/profile-collects";
-import ProfileSetting from "./components/profile-setting";
  
 const App = () => {
  return (
@@ -34,7 +33,6 @@ const App = () => {
        <Route path="/home" element={<Homepage />} />
        <Route path="/register" element={<Signup />} />
        <Route path="/profile-collects" element={<ProfileCollect />} />
-       <Route path="/profile-setting" element={<ProfileSetting />} />
      </Routes>
    </div>
  );

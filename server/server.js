@@ -10,14 +10,13 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
 const UserDetails = require("./models/UserSchema")
 const strategy = require("./strategies/localStrategy")
+const chkAuth = require("./strategies/checkLogin")
 
 // routes
 const authRoutes = require("./routes/authenticate");
 const userRoutes = require("./routes/userData");
 const artworkRoutes = require("./routes/artwork");
 const orderRoutes = require("./routes/order");
-
-
 
 //DB connection
 mongoose.connect(
@@ -47,6 +46,24 @@ app.use("/user"  , userRoutes)
 app.use("/artwork", artworkRoutes)
 app.use("/orders", orderRoutes);
 
+//middleware function to check if the ser is logged in or not
+function checkLogin(req,res,done)
+{
+      if(req.user)
+      {
+        done()
+      }
+      else{
+        res.status(200).json({
+          "msg": "auth faileeddddd"
+        })
+      }
+}
+
+//test for authenticated user
+app.get("/checkLoginStatus"  , checkLogin ,  (req,res)=>{
+  res.status(200).json(req.user)
+})
 
 //start server
 app.listen(port, () => {

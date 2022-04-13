@@ -4,8 +4,6 @@ const signIn = require("../controller/authenticate-controller");
 const res = require("express/lib/response");
 const passport = require('passport');  // authentication
 
-
-
   recordRoutes.route("/signUp").post(function (req, response) {
       
     try{
@@ -16,7 +14,7 @@ const passport = require('passport');  // authentication
     {
         res.status(500).json(
             {
-                "result": "errorRouteSignup",
+                "result": "error",
                 "message": e.message
             }
         )
@@ -57,7 +55,14 @@ const passport = require('passport');  // authentication
   recordRoutes.route("/signOut").post(function (req, response) {
       
     try{
-        signIn.logout(req,response)
+      req.session.destroy(function (err) {
+        res.status(200).json(
+            {
+                "result": "success",
+                "message": "logged out"
+            }
+        )
+      });
     }
     catch(e)    
     {
@@ -68,8 +73,6 @@ const passport = require('passport');  // authentication
             }
         )
     }
-
   });
-
 
   module.exports = recordRoutes

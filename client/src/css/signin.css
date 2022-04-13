@@ -90,16 +90,3 @@ input[type=text]:focus, input[type=password]:focus {
   padding: 10px;
 }
 
-
-
-/*@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }*/

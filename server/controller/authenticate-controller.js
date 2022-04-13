@@ -11,7 +11,6 @@ const User = require("../models/UserSchema")
 exports.signUpController = async (req,res)=>{
 
     try{
-        console.log("aliceaclie");
         const {name , email , password} = req.body;
 
         const oldUser = await User.findOne({email});

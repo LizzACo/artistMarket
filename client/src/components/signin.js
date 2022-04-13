@@ -45,13 +45,11 @@ async function signupPage(e) {
     .then((response) => response.json())
     .then((response) => {
 
-      // console.log(response , "resssssssssssssssssssssssssssssssss")
       if (response.status === 401) {
         // do what you need to do here
         window.alert("invalid credential")
       }
         else{
-          // window.alert("invalid credential")
           navigate("/")
         }
 

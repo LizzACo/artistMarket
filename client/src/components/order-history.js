@@ -14,24 +14,18 @@ export default function OrderHistory() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Order History</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
-        {/* <header>
-          <div className="logo2">VENUSTY</div>
-          <a href="#" className="profile">
-            <div className="profile-btn" />
-          </a>
-        </header> */}
         <div className="sub-menu">
           <div className="sub-menu-list">
-            <a href="#" className="collects">Collects</a>
-            <a href="#" className="followed-artists">Followed Artists</a>
-            <a href="#" className="order">Order History</a>
-            <a href="#" className="edit-settings">Edit Settings</a>
+            <a href="/profile-collects" className="collects">Collects</a>
+            <a href="/follow" className="followed-artists">Followed Artists</a>
+            <a href="/order-history" className="order">Order History</a>
+            <a href="/edit-setting" className="edit-settings">Edit Settings</a>
           </div>
         </div>
         <div className="container">
           <div className="row justify-content-md-center row1">
             <div className="col-4 column1">
-              <div className="box" />
+            <img className="box" src="img/artist11.png" alt="order in progress"/>
             </div>
             <div className="col-4 column2">
               <h2 className="order-in-progress">Order in Progress</h2>
@@ -41,9 +35,10 @@ export default function OrderHistory() {
               <a href="#"><button type="view" value="view" className="view-details">View Details</button></a>
             </div>
           </div>
+
           <div className="row justify-content-md-center row2">
             <div className="col-4 column1">
-              <div className="box" />
+            <img className="box" src="img/order1.png" alt="shipped order"/>
             </div>
             <div className="col-4 column2">
               <h2 className="shipped">Shipped</h2>

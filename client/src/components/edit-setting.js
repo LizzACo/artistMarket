@@ -13,18 +13,12 @@ export default function Edit() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Edit Setting</title>
-        {/* <header>
-          <div className="logo2">VENUSTY</div>
-          <a href="#" className="profile">
-            <div className="profile-btn" />
-          </a>
-        </header> */}
         <div className="sub-menu">
           <div className="sub-menu-list">
-            <a href="#" className="collects">Collects</a>
-            <a href="#" className="followed-artists">Followed Artists</a>
-            <a href="#" className="order">Order History</a>
-            <a href="#" className="edit-settings">Edit Settings</a>
+            <a href="/profile-collects" className="collects">Collects</a>
+            <a href="/follow" className="followed-artists">Followed Artists</a>
+            <a href="/order-history" className="order">Order History</a>
+            <a href="/edit-setting" className="edit-settings">Edit Settings</a>
           </div>
         </div>
         <div className="form-wrap">

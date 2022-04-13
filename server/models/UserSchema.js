@@ -8,11 +8,6 @@ const user = new mongoose.Schema({
   password: String,
 });
 
-// user.plugin(passportLocalMongoose , {
-//   usernameField : "email",
-//   passwordField:"password"
-// });
-
 module.exports = mongoose.model("User", user);
 
 

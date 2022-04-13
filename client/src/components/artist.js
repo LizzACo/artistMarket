@@ -17,120 +17,168 @@ export default function Artist(){
             {/* row1 */}
             <div className="artist-container-row">
               <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+                <img
+                className="no-image-box"
+                src="img/artist1.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Cha Yuree</dt>
+                  <dt>American</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">12 works online</dt>
                 </dl>
               </div>
               <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+                <img
+                className="no-image-box"
+                src="img/artist2.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
+                  <dt>Kim Hyung Dae</dt>
                   <dt>Fininish,</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">2 works online</dt>
                 </dl>
               </div>
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist3.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Agathe Pitié</dt>
+                  <dt>French</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">8 works online</dt>
                 </dl>
               </div>
             </div>
             {/* row2 */}
             <div className="artist-container-row">
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist4.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Victoria Tanto</dt>
+                  <dt>French</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">15 works online</dt>
                 </dl>
               </div>
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist5.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Mónica de Miranda</dt>
+                  <dt>Afro-Portuguese</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">4 works online</dt>
                 </dl>
               </div>
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist6.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Charles Irvin</dt>
+                  <dt>American</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">11 works online</dt>
                 </dl>
               </div>
             </div>
             {/* row3 */}
             <div className="artist-container-row">
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">               
+                <img
+                className="no-image-box"
+                src="img/artist7.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>David Price</dt>
+                  <dt>British</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">21 works online</dt>
                 </dl>
               </div>
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist8.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Alice Wheeler</dt>
+                  <dt>American</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">7 works online</dt>
                 </dl>
               </div>
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist9.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Yangyang Pan</dt>
+                  <dt>Chinese</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">13 works online</dt>
                 </dl>
               </div>
             </div>
             {/* row4 */}
             <div className="artist-container-row">
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+              <div className="artists">       
+                <img
+                className="no-image-box"
+                src="img/artist10.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Pablo Dávila</dt>
+                  <dt>Mexican</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">9 works online</dt>
+                </dl>
+              </div>
+              <div className="artists">                
+                <img
+                className="no-image-box"
+                src="img/artist11.png"
+                alt="First slide"
+                />
+                <dl>
+                  <dt>Klaus Killisch</dt>
+                  <dt>German</dt>
+                  <dt>1894-1949</dt>
+                  <dt className="top-height">26 works online</dt>
                 </dl>
               </div>
               <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
+                <img
+                className="no-image-box"
+                src="img/artist12.png"
+                alt="First slide"
+                />
                 <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
+                  <dt>Sabrina Milazzo</dt>
+                  <dt>Italian</dt>
                   <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
-                </dl>
-              </div>
-              <div className="artists">
-                <div className="no-image-box"><p><i className="bi bi-x-lg" /></p></div>
-                <dl>
-                  <dt>Aino Aalto</dt>
-                  <dt>Fininish,</dt>
-                  <dt>1894-1949</dt>
-                  <dt className="top-height">2works online</dt>
+                  <dt className="top-height">37 works online</dt>
                 </dl>
               </div>
             </div>
